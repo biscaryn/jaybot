@@ -1,9 +1,9 @@
 JayBot 1.0
 =========
 
-##Dependent Libraries
+## Dependent Libraries
 
-PIL, download Pillow 
-Pytesseract
-Google Tesseract OCR
-Airdroid
+* PIL, download Pillow 
+* Pytesseract
+* Google Tesseract OCR
+* Airdroid

@@ -3,6 +3,17 @@ import pytesseract
 import webbrowser
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
 
+# TO-DO:
+#   - Train tesseract OCR to HQ's font (Circular)
+#   - learn Google Search and Wikipedia API
+#   - new method: Using Wikipedia to find answer
+#   - new method: Searching "Question + each answer" to find answer
+#   - show degree of certainty
+#   - More graphic UI with different colors using crayons library
+#   - Show one final answer
+#   - Deal with special cases like "which of these" and "NOT"
+
+
 
 
 question_bb = (670, 340, 1000, 420) # coordinates of the question live
@@ -24,20 +35,6 @@ a.save("answers.png", "PNG")
 question = (pytesseract.image_to_string(Image.open('question.png'))).encode("utf-8")
 question = question.replace('\n', ' ')
 answers = ((pytesseract.image_to_string(Image.open('answers.png'))).encode("utf-8")).splitlines()
-
-# TO-DO:
-#   - Train tesseract OCR to HQ's font
-#   - learn Google Search and Wikipedia API
-#   - new method: Using Wikipedia to find answer
-#   - new method: Searching "Question + each answer" to find answer
-#   - show degree of certainty
-#   - More graphic UI with different colors using crayons library
-#   - Show one final answer
-#   - Deal with special cases like "which of these" and "NOT"
-
-
-# if (question.startswith('Which of these')):
-#     question = question.replace('Which of these', '')
 
 
 # method 1: directly googling the question
